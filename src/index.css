@@ -1,0 +1,192 @@
+:root {
+  --primary: #ff6b6b;       /* Main vibrant color */
+  --primary-light: #ff8787; /* Hover / lighter shade */
+  --secondary: #4ecdc4;     /* Accent color */
+  --secondary-light: #6ef0e0;
+  --bg: #f9f9fb;            /* App background */
+  --card: #ffffff;           /* Cards */
+  --text: #333333;           /* Default text */
+  --text-muted: #777777;
+  --shadow: rgba(0,0,0,0.12);
+  --ok: #38b000;
+  --warn: #ffb703;
+  --danger: #d00000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary-light);
+}
+
+.app-navbar {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  padding: 0.8rem 1rem;
+  box-shadow: 0 4px 10px var(--shadow);
+}
+
+.app-navbar .navbar-brand,
+.app-navbar .nav-link {
+  color: #fff !important;
+  font-weight: 600;
+}
+
+.navbar-nav .nav-link.active {
+  border-bottom: 2px solid #fff;
+}
+
+.navbar .btn-light {
+  background-color: #ffffff;
+  color: var(--primary);
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 0.35rem 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.navbar .btn-light:hover {
+  background-color: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.page {
+  padding: 2rem;
+}
+
+.card-elev {
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px var(--shadow);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-elev:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px var(--shadow);
+}
+
+.btn-brand {
+  background: var(--primary);
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-brand:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px var(--shadow);
+}
+
+.alert {
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+}
+
+.badge-pill {
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+}
+
+.seat {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  border: 2px solid #e0e0e0;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.seat.available:hover {
+  border-color: var(--primary);
+  transform: scale(1.1);
+}
+
+.seat.selected {
+  background: var(--secondary);
+  color: #fff;
+  border-color: transparent;
+  transform: scale(1.1);
+}
+
+.seat.booked {
+  background: #e0e0e0;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+input, select, textarea {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.2s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.2);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  border-width: 0.35rem;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+.table th {
+  background-color: var(--bg);
+}
+
+.table-responsive {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+/* Fix Search button breaking text */
+.search-btn {
+  min-width: 80px;   /* give enough width */
+  white-space: nowrap; /* keep text in one line */
+  font-weight: 500;
+}
